@@ -24,6 +24,7 @@ namespace API
                 {
                     var context = services.GetRequiredService<DataContext>();
                     context.Database.Migrate(); // Apply pending database migrations if they aren't applied
+                    Seed.SeedData(context);
                 }
                 catch (Exception ex)
                 {
